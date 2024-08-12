@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';
+
+import '../../../utils/constants/colors.dart';
+import '../../shapes/circular_shape.dart';
+
+class AppPrimaryDesign extends StatelessWidget {
+  const AppPrimaryDesign({
+    super.key,
+    this.child,
+  });
+  final Widget? child;
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          color: AppColors.primaryColor,
+        ),
+
+        const Positioned(
+          top: -200,
+          right: -100,
+          child: CircularShape(
+            radius: 150,
+          ),
+        ),
+        const Positioned(
+          top: -100,
+          right: -100,
+          child: CircularShape(
+            radius: 150,
+          ),
+        ),
+        const Positioned(
+          bottom: -200,
+          left: -100,
+          child: CircularShape(
+            radius: 150,
+          ),
+        ),
+        const Positioned(
+          bottom: -100,
+          left: -100,
+          child: CircularShape(radius: 150, color: Colors.white),
+        ),
+        Positioned(child: child ?? const SizedBox()),
+        // Positioned(
+        //   left: 0,
+        //     right: 0,
+        //     // top: AppDeviceUtils.getAppBarHeight(),
+        //     child: child ?? SizedBox())
+        // Positioned(
+        //   bottom: -50,
+        //   left: -100,
+        //   child: CircularShape(radius: 105, color: Colors.white),
+        // ),
+      ],
+    );
+  }
+}
