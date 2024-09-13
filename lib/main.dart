@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:rista_zoro_app/View/Navigation%20Screens/Screens/Matches%20Screen/matches_screen.dart';
 import 'package:rista_zoro_app/utils/constants/texts.dart';
+import 'package:rista_zoro_app/utils/routes/app_routes.dart';
+import 'package:rista_zoro_app/utils/routes/app_screens.dart';
 import 'package:rista_zoro_app/utils/theme/theme.dart';
 
 void main() async {
@@ -17,13 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        title: AppTexts.appName,
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.system,
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        initialRoute: AppScreens.splashScreen, // Set your initial route here
-        getPages: AppRoutes.getPages(), // Use your AppRoutes class
-        );
+      title: AppTexts.appName,
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      initialRoute: AppScreens.splashScreen, // Set your initial route here
+      getPages: AppRoutes.getPages(), // Use your AppRoutes class
+    );
   }
 }
