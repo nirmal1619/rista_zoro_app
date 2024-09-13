@@ -1,19 +1,18 @@
-
 import 'package:flutter/cupertino.dart';
 
 class AppListViewSeparator extends StatelessWidget {
-  final IndexedWidgetBuilder itemBuilder;
   final IndexedWidgetBuilder separatorBuilder;
   final int itemCount;
   final Axis scrollDirection;
-  final ScrollPhysics ? physics;
-
+  final ScrollPhysics? physics;
+  final IndexedWidgetBuilder itemBuilder;
   const AppListViewSeparator({
     super.key,
-    required this.itemBuilder,
     required this.separatorBuilder,
     required this.itemCount,
-    this.scrollDirection = Axis.vertical, this.physics= const BouncingScrollPhysics(),
+    this.scrollDirection = Axis.vertical,
+    this.physics = const BouncingScrollPhysics(),
+    required this.itemBuilder,
   });
 
   @override

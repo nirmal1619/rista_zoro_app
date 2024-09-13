@@ -2,9 +2,10 @@ import 'dart:core';
 
 class AppImages {
   // on boarding gif
-  static String onBordingImage1 = "assets/onBoardingGif/boy_searching.gif";
-  static String onBordingImage2 = "assets/onBoardingGif/girl_selecting.gif";
-  static String onBordingImage3 = "assets/onBoardingGif/couple.gif";
+  static String onBordingImage1 = "assets/onBoarding_images/onboarding1.jpg";
+  static String onBordingImage2 = "assets/onBoarding_images/onboarding2.jpg";
+
+  static String onBordingImage3 = loginImage;
 
   // app logo
   static const String appLogo = "assets/app_logo/app_logo.png";

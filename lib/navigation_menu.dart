@@ -4,12 +4,15 @@ import 'package:get/get.dart';
 import 'package:rista_zoro_app/common/Drawer/app_drawer.dart';
 import 'package:rista_zoro_app/utils/constants/colors.dart';
 import 'package:rista_zoro_app/utils/helpers/helper.dart';
+import 'package:rista_zoro_app/utils/routes/app_screens.dart';
+import 'package:rista_zoro_app/utils/storage/app_storage.dart';
+import 'package:rista_zoro_app/utils/storage/app_storage_key.dart';
 
 import 'View/Navigation Screens/Screens/Home Screen/home_screen.dart';
-import 'View/Navigation Screens/Screens/Matches/matches_screen.dart';
+import 'View/Navigation Screens/Screens/Matches Screen/matches_screen.dart';
 
-class NavigationMenu extends StatelessWidget {
-  NavigationMenu({super.key});
+class AppNavigationMenu extends StatelessWidget {
+  AppNavigationMenu({super.key});
 
   final controller =
       Get.put(NavigationController()); // Instantiate the controller here
@@ -58,9 +61,23 @@ class NavigationController extends GetxController {
 
   // final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
+  @override
+  void onInit() {
+    super.onInit();
+    // TODO: implement onInit
+
+    Future.delayed(const Duration(seconds: 3), () {
+      if (!AppStorage.readData(AppStorageKey.allDetailsAdded)) {
+        Future.delayed(const Duration(seconds: 1), () {
+          Get.offAllNamed(AppScreens.enterDetailsScreen);
+        });
+      }
+    });
+  }
+
   final screens = [
     const HomeScreen(),
-    const MatchesScreen(),
+    MatchesScreen(),
     Container(),
     Container(),
     Container(),

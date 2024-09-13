@@ -25,9 +25,35 @@ class AppValidator {
   static String? validateLoginPassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password is required.';
-    } else if (value.length < 6) {
+    } else if (value.length < 8) {
       "Password is Short";
     }
+    return null;
+  }
+
+  static String? validateFName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'First name is required.';
+    }
+    return null;
+  }
+
+  static String? validateLName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Last name is required.';
+    }
+    return null;
+  }
+
+  static String? validateHeight(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Height is required';
+    }
+    final double? height = double.tryParse(value);
+    if (height == null || height <= 0 || height >= 8.0) {
+      return 'Enter a valid height below like 5.6 ';
+    }
+
     return null;
   }
 

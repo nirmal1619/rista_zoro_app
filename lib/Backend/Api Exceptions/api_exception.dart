@@ -1,29 +1,33 @@
-class AppExceptions implements Exception {
-  final _message;
-  final _prefix;
+import '../Api Errors/api_errors.dart';
 
-  AppExceptions([this._message, this._prefix]);
+class AppExceptions implements Exception {
+  final String? message;
+  final String prefix;
+
+  AppExceptions([this.message, this.prefix = '']);
 
   @override
   String toString() {
-    return '$_prefix $_message';
+    return '$prefix$message';
   }
 }
 
 class FetchDataException extends AppExceptions {
   FetchDataException([String? message])
-      : super(message, "Error During communications");
+      : super(message, ApiErrors.fetchDataError);
 }
 
 class BadRequestException extends AppExceptions {
-  BadRequestException([String? message]) : super(message, "Invalid Request ");
+  BadRequestException([String? message])
+      : super(message, ApiErrors.badRequestError);
 }
 
-class UnauthorisedExpextion extends AppExceptions {
-  UnauthorisedExpextion([String? message])
-      : super(message, "Unauthorised request");
+class UnauthorisedException extends AppExceptions {
+  UnauthorisedException([String? message])
+      : super(message, ApiErrors.unauthorizedError);
 }
 
-class RequestTimeOut extends AppExceptions {
-  RequestTimeOut([String? message]) : super(message, "Timeout! ");
+class RequestTimeoutException extends AppExceptions {
+  RequestTimeoutException([String? message])
+      : super(message, ApiErrors.requestTimeoutError);
 }

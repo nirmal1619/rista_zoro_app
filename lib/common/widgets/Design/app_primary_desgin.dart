@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rista_zoro_app/utils/constants/image_strings.dart';
 
-import '../../../utils/constants/colors.dart';
 import '../../shapes/circular_shape.dart';
 
 class AppPrimaryDesign extends StatelessWidget {
@@ -13,8 +13,13 @@ class AppPrimaryDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          color: AppColors.primaryColor,
+        SizedBox(
+          height: double.infinity,
+          child: Image.asset(
+            AppImages.loginImage,
+            fit: BoxFit.cover,
+            opacity: const AlwaysStoppedAnimation(0.9),
+          ),
         ),
 
         const Positioned(

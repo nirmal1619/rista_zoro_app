@@ -27,9 +27,10 @@ class AppFloatingAppbar extends StatelessWidget {
       flexibleSpace: flexibleSpaceWidget,
       bottom: bottomWidget != null
           ? PreferredSize(
-        preferredSize: Size.fromHeight(AppDeviceUtils.getAppBarHeight() + 20),
-        child: bottomWidget!,
-      )
+              preferredSize:
+                  Size.fromHeight(AppDeviceUtils.getAppBarHeight() + 20),
+              child: bottomWidget!,
+            )
           : null,
     );
   }

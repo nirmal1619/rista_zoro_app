@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import '../../common/User Model/user_model.dart';
 import '../../navigation_menu.dart';
 import '../../utils/helpers/show_snackbar.dart';
+import '../../utils/storage/app_storage_key.dart'; // Import the storage keys
 import '../Api utils/Api Constants/api_urls.dart';
 
 class ApiService {
@@ -32,26 +33,26 @@ class ApiService {
 
         if (data['result'] == 1) {
           if (rememberMe) {
-            storage.write('phone', phone);
-            storage.write('password', password);
-            storage.write('rememberMe', true);
+            storage.write(AppStorageKey.phone, phone); // Use the storage key
+            storage.write(
+                AppStorageKey.password, password); // Use the storage key
+            storage.write(
+                AppStorageKey.rememberMe, true); // Use the storage key
           }
 
-          Get.offAll(() => NavigationMenu());
+          storage.write(AppStorageKey.isLogin, true);
+          Get.offAll(() => AppNavigationMenu());
         } else {
-          // Show specific error message from API
-          // String errorMessage = data['msg'] ?? 'Check phone or Password';
           ShowSnackbar.errorMessage('Error', "Check phone or Password");
         }
       } else {
-        // Handle HTTP errors
         ShowSnackbar.errorMessage(
             'Error', 'Failed to login: ${response.reasonPhrase}');
       }
     } catch (e) {
       ShowSnackbar.errorMessage('Error', 'An error occurred: ${e.toString()}');
     } finally {
-      storage.write("isLogin", true);
+      // Use the storage key
     }
   }
 
@@ -79,7 +80,7 @@ class ApiService {
           // Optionally, you could store the user data in local storage
           final GetStorage storage = GetStorage();
           storage.write(
-              'user', user.toJson()); // Save user data to local storage
+              AppStorageKey.user, user.toJson()); // Use the storage key
         } else {
           ShowSnackbar.errorMessage('Error', data['msg']);
         }

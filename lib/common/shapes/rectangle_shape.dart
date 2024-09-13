@@ -10,7 +10,6 @@ class RectangularShape extends StatelessWidget {
 
   const RectangularShape({
     super.key,
-
     this.isCurved = false,
     this.color = AppColors.white,
     this.child,
@@ -23,7 +22,7 @@ class RectangularShape extends StatelessWidget {
       // height: height,
       // width: width,
       decoration: BoxDecoration(
-          color: color.withOpacity(0.2),
+          color: color,
           shape: BoxShape.rectangle,
           borderRadius: isCurved
               ? BorderRadius.circular(12)

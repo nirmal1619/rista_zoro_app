@@ -1,7 +1,7 @@
 // File: lib/utils/constants/app_texts.dart
 class AppTexts {
   // GLOBAL Texts
-  static const String appName = "Rista Zoro.Com";
+  static const String appName = "RishtaZoro.Com";
 
   // Splash Screen Text
   static const String splashText1 = "India's Most Trusted";
@@ -15,8 +15,42 @@ class AppTexts {
   // Login Screen Text
   static const String rememberMe = "Remember me";
   static const String forgetPassword = "Forget Password ?";
+  static const String missingFieldErrorP1 = "Missing Data";
+  static const String missingFieldErrorP2 = " Fill all the '*' fields";
 
   // Create Profile Text
+
+  // Profile Card About Section
+  static const String aboutUser =
+      "Hi, I'm [Your Name], currently pursuing a B.Tech in Software Engineering with a focus on Computer Science. I have a passion for coding and technology, always eager to learn and explore new innovations in the field. Outside of academics, I'm an avid cricket player and enjoy spending time o";
+
+  // Example Indian boy names
+  static const String boy1 = "Arjun";
+  static const String boy2 = "Rohan";
+  static const String boy3 = "Vikram";
+  static const String boy4 = "Siddharth";
+  static const String boy5 = "Anil";
+
+  // Example Indian girl names
+  static const String girl1 = "Priya";
+  static const String girl2 = "Anjali";
+  static const String girl3 = "Kavya";
+  static const String girl4 = "Sakshi";
+  static const String girl5 = "Neha";
+
+  // List of profile names, alternating between boys and girls
+  static List<String> profileNames = [
+    boy1,
+    girl1,
+    boy2,
+    girl2,
+    boy3,
+    girl3,
+    boy4,
+    girl4,
+    boy5,
+    girl5,
+  ];
 
   static const String enterHeightHint = "Enter Height";
   static const String createProfileForHint = "Create Profile for";
@@ -61,86 +95,4 @@ class AppTexts {
 
   // Profile Matches Section
   // Options
-  static const List<String> profileOptions = [
-    'Yourself',
-    'Brother',
-    'Sister',
-    'Daughter',
-    'Son',
-    'Relative'
-  ];
-
-  static const List<String> religions = [
-    'Hindu',
-    'Muslim',
-    'Christian',
-    'Sikh',
-    'Buddhist',
-    'Jain',
-    'Zoroastrian',
-    'Other'
-  ];
-
-  static const List<String> motherTongues = [
-    'Hindi',
-    'English',
-    'Bengali',
-    'Telugu',
-    'Marathi',
-    'Tamil',
-    'Urdu',
-    'Gujarati',
-    'Kannada',
-    'Odia',
-    'Malayalam',
-    'Punjabi',
-    'Assamese',
-    'Maithili',
-    'Bhili/Bhilodi'
-  ];
-
-  static const Map<String, String> countryCodes = {
-    'India': '+91',
-    'USA': '+1',
-    'UK': '+44',
-    'Australia': '+61',
-    'Canada': '+1',
-    'China': '+86',
-    'France': '+33',
-    'Germany': '+49',
-    'Japan': '+81',
-    'Russia': '+7'
-  };
-
-  // Profile Card About Section
-  static const String aboutUser =
-      "Hi, I'm [Your Name], currently pursuing a B.Tech in Software Engineering with a focus on Computer Science. I have a passion for coding and technology, always eager to learn and explore new innovations in the field. Outside of academics, I'm an avid cricket player and enjoy spending time o";
-
-  // Example Indian boy names
-  static const String boy1 = "Arjun";
-  static const String boy2 = "Rohan";
-  static const String boy3 = "Vikram";
-  static const String boy4 = "Siddharth";
-  static const String boy5 = "Anil";
-
-  // Example Indian girl names
-  static const String girl1 = "Priya";
-  static const String girl2 = "Anjali";
-  static const String girl3 = "Kavya";
-  static const String girl4 = "Sakshi";
-  static const String girl5 = "Neha";
-
-  // List of profile names, alternating between boys and girls
-  static List<String> profileNames = [
-    boy1,
-    girl1,
-    boy2,
-    girl2,
-    boy3,
-    girl3,
-    boy4,
-    girl4,
-    boy5,
-    girl5,
-  ];
 }
